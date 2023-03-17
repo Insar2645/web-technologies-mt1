@@ -1,0 +1,333 @@
+
+@-webkit-keyframes extend {
+  0% {
+      width: 150px;
+      height: 50px;
+      border-radius: 10px;
+      } 10% {
+      width: 150px;
+      height: 50px;
+      background: #fff;
+      margin-top: - 5px;
+      } 20% {
+      width: 150px;
+      height: 40px;
+      background: black;
+      margin-top: 0px;
+      } 100% {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: black;
+      }
+  }
+@keyframes extend {
+  0% {
+      width: 150px;
+      height: 40px;
+      border-radius: 10px;
+      } 10% {
+      width: 150px;
+      height: 40px;
+      background: #fff;
+      margin-top: - 5px;
+      } 20% {
+      width: 150px;
+      height: 40px;
+      background: black;
+      margin-left: 800px;
+      margin-top: 0px;
+      } 100% {
+      width: 40px;
+      height: 40px;
+      border-radius: 80px;
+      background: black;
+      }
+  }
+@-webkit-keyframes disappear {
+  0% {
+      opacity: 1;
+      } 20% {
+      color: #fff;
+      } 100% {
+      opacity: 0;
+      }
+  }
+@keyframes disappear {
+  0% {
+      opacity: 1;
+      } 20% {
+      color: #fff;
+      } 100% {
+      opacity: 0;
+      }
+  }
+@-webkit-keyframes appear {
+  0% {
+      opacity: 0;
+      } 70% {
+      opacity: 0;
+      } 100% {
+      opacity: 1;
+      }
+  }
+@keyframes appear {
+  0% {
+      opacity: 0;
+      } 70% {
+      opacity: 0;
+      } 100% {
+      opacity: 1;
+      }
+  }
+
+body{
+    margin: 0;
+    background-color: #12111A;
+}
+.top-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #12111A;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #FFF;
+    height: 50px;
+    padding: 1em;
+    border-bottom: 1px solid white;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .menu a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  
+  .menu > li {
+    margin: 0 1rem;
+    overflow: hidden;
+  }
+  
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: #fff;
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+  }
+  
+  .menu-button::before {
+    content: '';
+    margin-top: -8px;
+  }
+  
+  .menu-button::after {
+    content: '';
+    margin-top: 8px;
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+  }
+  
+  #menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+  }
+  
+  @media (max-width: 700px) {
+    .menu-button-container {
+      display: flex;
+    }
+    .menu {
+      position: absolute;
+      top: 0;
+      margin-top: 50px;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    #menu-toggle ~ .menu li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .menu li {
+      border: 1px solid #333;
+      height: 2.5em;
+      padding: 0.5em;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu > li {
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0.5em 0;
+      width: 100%;
+      color: white;
+      background-color: #222;
+    }
+    .menu > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  }
+.wrapper{
+    width: 100vw;
+    flex-direction: column;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+}
+.project_item{
+    height: 50vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid white;
+}
+.project_item img{
+    width: 35vw;
+}
+.project_item .text_wrapper{
+    width: 30vw;
+}
+.text_wrapper a {
+    text-decoration: none;
+    color: white;
+}
+form{
+    margin-left: 20vw;
+    color: white;
+}
+legend{
+    margin-left: -5vw;
+    font-size: 2rem;
+}
+.input_item{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+.input_item h2 {
+    width: 18vw;
+}
+input{
+    width: 20vw;
+    height: 2rem;
+}
+.text_area{
+    display: flex;
+    flex-direction: row;
+}
+.text_area h2{
+    width: 18vw;
+}
+button{
+    color: black;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5vh;
+    margin-left: 50vw;
+}
+.block{
+    height: 5vh;
+}
+button {
+    border-width: 1px;
+    width: 150px;
+    height: 40px;
+    /*border-radius*/
+    background: #fff;
+    border: 1px solid #fafafa;
+    position: relative;
+    cursor: pointer;
+    }
+
+button > span {
+    font-size: 1.4rem;
+    color: black;
+    }
+
+  .button_img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0
+    }
+
+button:focus {
+    /*animation*/
+    -webkit-animation: extend 1s ease-in-out;
+    -ms-animation: extend 1s ease-in-out;
+    animation: extend 1s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards
+    }
+
+button:focus > span {
+    /*animation*/
+    -webkit-animation: disappear 1s ease-in-out;
+    -ms-animation: disappear 1s ease-in-out;
+    animation: disappear 1s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards
+    }
+
+button:focus > img {
+    /*animation*/
+    -webkit-animation: appear 1s ease-in-out;
+    -ms-animation: appear 1s ease-in-out;
+    animation: appear 1s ease-in-out;
+    -webkit-animation-fill-mode: forwards;
+    /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards
+    }
